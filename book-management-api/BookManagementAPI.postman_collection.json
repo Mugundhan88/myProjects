@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "f5d0f7c1-1234-4a5b-8c6d-1234567890ab",
+		"name": "Book Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"description": "A collection of requests for the Book Management REST API built with Node.js, Express, and TypeScript."
+	},
+	"item": [
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books/your-book-id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books",
+						"your-book-id"
+					],
+					"variable": [
+						{
+							"key": "bookId",
+							"value": "your-book-id",
+							"description": "Replace with an actual book ID after creating a book."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The Hitchhiker's Guide to the Galaxy\",\n    \"author\": \"Douglas Adams\",\n    \"publishedYear\": 1979\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Existing Book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The Hitchhiker's Guide to the Galaxy (Updated Edition)\",\n    \"publishedYear\": 1980\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/books/your-book-id-to-update",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books",
+						"your-book-id-to-update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/books/your-book-id-to-delete",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books",
+						"your-book-id-to-delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Import Books (CSV)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/books/import",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"books",
+						"import"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string",
+            "description": "The base URL for the API. Change the port if your .env file uses a different one."
+		}
+	]
+}
+
