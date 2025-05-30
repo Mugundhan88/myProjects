@@ -1,0 +1,8 @@
+/* Main CSS file that imports all other CSS files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'reset.css';
+@import 'variables.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'sections.css';
+@import 'responsive.css';

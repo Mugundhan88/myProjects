@@ -1,0 +1,82 @@
+/* Responsive CSS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    font-size: 70%;
+  }
+  
+  .section-header h2 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-content h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  html {
+    font-size: 62.5%;
+  }
+  
+  section {
+    padding: var(--spacing-3xl) 0;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 var(--spacing-3xl);
+  }
+}
+
+/* Print styles */
+@media print {
+  header, 
+  .cta,
+  footer {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #121212;
+    --color-background-alt: #1e1e1e;
+    --color-text: #e0e0e0;
+    --color-text-light: #a0a0a0;
+    --color-text-dark: #ffffff;
+    --color-border: #333333;
+  }
+}
